@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="baseLayout" template="/WEB-INF/layout/template/navbar.jsp">
+        <put-attribute name="titolo" value=""/>
+        <put-attribute name="content" value=""/>
+    </definition>
+
+    <definition name="index" extends="baseLayout">
+        <put-attribute name="titolo" value="Car Renting"/>
+        <put-attribute name="content" value="/WEB-INF/view/index.jsp"/>
+    </definition>
+
+    <definition name="carList" extends="baseLayout">
+        <put-attribute name="titolo" value="Car List"/>
+        <put-attribute name="content" value="/WEB-INF/view/car.jsp"/>
+    </definition>
+
+    <definition name="userList" extends="baseLayout">
+        <put-attribute name="titolo" value="User List"/>
+        <put-attribute name="content" value="/WEB-INF/view/user.jsp"/>
+    </definition>
+</tiles-definitions>
