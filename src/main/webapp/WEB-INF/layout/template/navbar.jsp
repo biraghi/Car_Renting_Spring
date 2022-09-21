@@ -26,7 +26,7 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Database</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="./user/">Users</a></li>
-                            <li><a class="dropdown-item" href="#">Cars</a></li>
+                            <li><a class="dropdown-item" href="./car/">Cars</a></li>
                             <li><a class="dropdown-item" href="#">Bookings</a></li>
                         </ul>
                     </li>
