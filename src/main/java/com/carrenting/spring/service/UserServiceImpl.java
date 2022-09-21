@@ -19,21 +19,21 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User getUserFromId(int id) {
-        return null;
+        return userRepository.selUserFromId(id);
     }
 
     @Override
     public User getUserFromUsername(String username) {
-        return null;
+        return userRepository.selUserFromUsername(username);
     }
 
     @Override
     public void addUser(User user) {
-
+        userRepository.insUser(user);
     }
 
     @Override
     public void delUserFromId(int id) {
-
+        userRepository.delUserFromId(id);
     }
 }

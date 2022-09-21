@@ -22,4 +22,9 @@
         <put-attribute name="titolo" value="User List"/>
         <put-attribute name="content" value="/WEB-INF/view/user.jsp"/>
     </definition>
+
+    <definition name="bookingList" extends="baseLayout">
+        <put-attribute name="titolo" value="Booking List"/>
+        <put-attribute name="content" value="/WEB-INF/view/booking.jsp"/>
+    </definition>
 </tiles-definitions>

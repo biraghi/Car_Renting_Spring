@@ -27,7 +27,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="./user/">Users</a></li>
                             <li><a class="dropdown-item" href="./car/">Cars</a></li>
-                            <li><a class="dropdown-item" href="#">Bookings</a></li>
+                            <li><a class="dropdown-item" href="./booking/">Bookings</a></li>
                         </ul>
                     </li>
                 </ul>

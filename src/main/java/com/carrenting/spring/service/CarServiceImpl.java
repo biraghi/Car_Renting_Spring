@@ -19,21 +19,21 @@ public class CarServiceImpl implements CarService{
 
     @Override
     public Car getCarFromId(int id) {
-        return null;
+        return carRepository.selCarFromId(id);
     }
 
     @Override
     public Car getCarFromLicensePlate(String licensePlate) {
-        return null;
+        return carRepository.selCarFromLicensePlate(licensePlate);
     }
 
     @Override
     public void addCar(Car car) {
-
+        carRepository.insCar(car);
     }
 
     @Override
     public void delCarFromId(int id) {
-
+        carRepository.delCarFromId(id);
     }
 }
