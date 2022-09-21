@@ -14,4 +14,10 @@ public class IndexController {
     {
         return "index";
     }
+
+    @GetMapping(value = "dati")
+    public String getDati(Model model)
+    {
+        return "dati";
+    }
 }

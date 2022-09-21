@@ -23,8 +23,18 @@
         <put-attribute name="content" value="/WEB-INF/view/user.jsp"/>
     </definition>
 
+    <definition name="userForm" extends="baseLayout">
+        <put-attribute name="titolo" value="New User"/>
+        <put-attribute name="content" value="/WEB-INF/view/formUser.jsp"/>
+    </definition>
+
     <definition name="bookingList" extends="baseLayout">
         <put-attribute name="titolo" value="Booking List"/>
         <put-attribute name="content" value="/WEB-INF/view/booking.jsp"/>
+    </definition>
+
+    <definition name="dati" extends="baseLayout">
+        <put-attribute name="titolo" value="Car Renting"/>
+        <put-attribute name="content" value="/WEB-INF/view/dati.jsp"/>
     </definition>
 </tiles-definitions>

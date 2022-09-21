@@ -5,7 +5,7 @@
 <div>
     <h1>Car Renting</h1>
     <br/>
-    <form action="dati.jsp" method="get">
+    <form action="./dati" method="get">
         <button class="btn btn-primary" type="submit">Database</button>
     </form>
     <br><br>

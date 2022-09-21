@@ -2,10 +2,12 @@ package com.carrenting.spring.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
+
 
 @Entity
 @Table(name = "user")
@@ -28,6 +30,7 @@ public class User {
     private String lastname;
 
     @Column(name = "birth_date")
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate birthDate;
 
     @Column(name = "admin")
@@ -40,6 +43,7 @@ public class User {
 
 
     public User(){}
+
 
     public User(String username, String password, String firstname, String lastname, LocalDate birthDate, boolean admin) {
         this.username = username;
