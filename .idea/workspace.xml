@@ -9,17 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6ba960a-7aa1-4880-99c0-5779e3002243" name="Changes" comment="Delete and Update Booking">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/carAvailable.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/rangeDate.jsp" afterDir="false" />
+    <list default="true" id="c6ba960a-7aa1-4880-99c0-5779e3002243" name="Changes" comment="CarAvailable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/controller/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/controller/CarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/repository/CarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/repository/CarRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/repository/CarRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/repository/CarRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/service/CarService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/service/CarServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/service/CarServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/definitions/tiles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/definitions/tiles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/rangeDate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/rangeDate.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +170,7 @@
       <option name="presentableId" value="Default" />
       <updated>1663745825052</updated>
       <workItem from="1663745826748" duration="25005000" />
-      <workItem from="1664175850452" duration="20475000" />
+      <workItem from="1664175850452" duration="21529000" />
     </task>
     <task id="LOCAL-00001" summary="User List">
       <created>1663761092716</created>
@@ -242,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664195203520</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="CarAvailable">
+      <created>1664199604077</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1664199604077</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +269,8 @@
     <MESSAGE value="Delete User" />
     <MESSAGE value="Delete and Update Car" />
     <MESSAGE value="Delete and Update Booking" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete and Update Booking" />
+    <MESSAGE value="CarAvailable" />
+    <option name="LAST_COMMIT_MESSAGE" value="CarAvailable" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -286,8 +287,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/carrenting/spring/controller/CarController.java</url>
-          <line>89</line>
-          <option name="timeStamp" value="30" />
+          <line>87</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/carrenting/spring/controller/BookingController.java</url>
