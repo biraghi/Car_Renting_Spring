@@ -1,5 +1,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri ="http://java.sun.com/jsp/jstl/fmt" prefix = "fmt"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <%@ page session="true" %>
 
 
@@ -26,12 +29,10 @@
                     <td>${user.firstname}</td>
                     <td>${user.lastname}</td>
                     <td>${user.username}</td>
-                    <td>${user.birthDate}</td>
+                    <fmt:parseDate  var="birthDate" pattern = "yyyy-MM-dd" value = "${user.birthDate}"/>
+                    <td><fmt:formatDate pattern = "dd-MM-yyyy" value = "${birthDate}" /></td>
                     <td>
-                        <form action="user-servlet" method="get">
-                            <input type="hidden" name="id" value="${user.id}">
-                            <button class="btn btn-primary" type="submit">Update</button>
-                        </form>
+                        <a href="./update/${user.id}" class="btn btn-primary">Update</a>
                     </td>
                     <td>
                         <form action="user-servlet" method="get">

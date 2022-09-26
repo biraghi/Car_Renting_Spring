@@ -30,6 +30,32 @@ public class UserController {
         return "userList";
     }
 
+    @GetMapping(value = "/update/{id}")
+    private String getUserFormUpdate(@PathVariable("id")int id, Model model)
+    {
+        User user = userService.getUserFromId(id);
+        model.addAttribute("newUser", user);
+        return "userForm";
+    }
+
+    @PostMapping (value = "update/{id}")
+    private String updateUser(@ModelAttribute("newUser") User newUser) throws Exception {
+        try{
+            User oldUser = userService.getUserFromId(newUser.getId());
+            oldUser.setFirstname(newUser.getFirstname());
+            oldUser.setLastname(newUser.getLastname());
+            oldUser.setBirthDate(newUser.getBirthDate());
+            oldUser.setUsername(newUser.getUsername());
+            oldUser.setPassword(newUser.getPassword());
+            userService.addUser(oldUser);
+
+            return "redirect:/user/";
+        }
+        catch (Exception ex){
+            throw new Exception("Error");
+        }
+    }
+
     @GetMapping(value = "/add")
     private String getUserFormAdd(Model model)
     {
@@ -39,16 +65,13 @@ public class UserController {
     }
 
     @PostMapping (value = "add")
-    private String addUser(@ModelAttribute("newUser") User user)
-    {
+    private String addUser(@ModelAttribute("newUser") User user) throws Exception {
         try{
             userService.addUser(user);
             return "redirect:/user/";
         }
         catch (Exception ex){
-            return "redirect:/user/add";
+            throw new Exception("Error");
         }
-
-
     }
 }

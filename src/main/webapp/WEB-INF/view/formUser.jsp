@@ -17,26 +17,27 @@
 
       <div class="form-group">
         <label for="firstname">Firstname</label>
-        <form:input path="firstname" id="firstname" type="text" class="form-control" placeholder="Firstname"></form:input>
+        <form:input path="firstname" id="firstname" type="text" class="form-control" placeholder="Firstname"/>
       </div>
       <div class="form-group">
         <label for="lastname">Lastname</label>
-        <form:input path="lastname" id="lastname" type="text" class="form-control" placeholder="Lastname"></form:input>
+        <form:input path="lastname" id="lastname" type="text" class="form-control" placeholder="Lastname"/>
       </div>
       <div class="form-group">
         <label for="birthdate">Birthdate</label>
-        <form:input path="birthDate" id="birthdate" type="date" class="form-control"></form:input>
+        <form:input path="birthDate" id="birthdate" type="date" class="form-control"/>
       </div>
       <div class="form-group">
         <label for="username">Username</label>
-        <form:input path="username" id="username" type="text" class="form-control" placeholder="Username"></form:input>
+        <form:input path="username" id="username" type="text" class="form-control" placeholder="Username"/>
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <form:input path="password" id="password" type="text" class="form-control" placeholder="Password"></form:input>
+        <form:input path="password" id="password" type="text" class="form-control" placeholder="Password"/>
       </div>
       <br>
       <div class="form-actions">
+        <form:input path="id" id="id" type="hidden"/>
         <button class="btn btn-primary form-buttons" type="submit">Submit</button>
       </div>
 
