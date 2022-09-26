@@ -47,4 +47,14 @@
         <put-attribute name="titolo" value="Car Renting"/>
         <put-attribute name="content" value="/WEB-INF/view/dati.jsp"/>
     </definition>
+
+    <definition name="rangeDate" extends="baseLayout">
+        <put-attribute name="titolo" value="Car Available"/>
+        <put-attribute name="content" value="/WEB-INF/view/rangeDate.jsp"/>
+    </definition>
+
+    <definition name="carAvailable" extends="baseLayout">
+        <put-attribute name="titolo" value="Car Available"/>
+        <put-attribute name="content" value="/WEB-INF/view/carAvailable.jsp"/>
+    </definition>
 </tiles-definitions>

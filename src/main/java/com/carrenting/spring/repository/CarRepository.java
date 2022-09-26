@@ -3,6 +3,7 @@ package com.carrenting.spring.repository;
 import com.carrenting.spring.entity.Car;
 import com.carrenting.spring.entity.User;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface CarRepository {
@@ -15,4 +16,6 @@ public interface CarRepository {
     void insCar(Car car);
 
     void delCarFromId(int id);
+
+    List<Car> getCarBooked(LocalDate startDate, LocalDate finishDate);
 }

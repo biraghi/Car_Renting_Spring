@@ -6,9 +6,12 @@ import com.carrenting.spring.entity.User;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.transform.DistinctRootEntityResultTransformer;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Repository
@@ -63,6 +66,23 @@ public class CarRepositoryImpl implements CarRepository{
                 transaction.rollback();
             }
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    public List<Car> getCarBooked(LocalDate startDate, LocalDate finishDate) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            Criteria cr = session.createCriteria(Car.class);
+            Criteria crBooking = cr.createCriteria("bookings");
+            Criterion start = Restrictions.le("startDate", finishDate);
+            Criterion last = Restrictions.ge("finishDate", startDate);
+            Criterion app = Restrictions.eq("approve", true);
+
+            crBooking.add(Restrictions.and(Restrictions.and(start, last),app));
+            //Prenotazioni non disponibili
+            List<Car> carBooked = cr.setResultTransformer(DistinctRootEntityResultTransformer.INSTANCE).list();
+
+            return carBooked;
         }
     }
 }

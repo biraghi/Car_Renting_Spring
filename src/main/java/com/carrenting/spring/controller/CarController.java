@@ -2,9 +2,13 @@ package com.carrenting.spring.controller;
 
 import com.carrenting.spring.entity.Car;
 import com.carrenting.spring.service.CarService;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDate;
+import java.util.List;
 
 @Controller
 @RequestMapping(value = "/car")
@@ -70,5 +74,20 @@ public class CarController {
     private String deleteCarById(@PathVariable("id")int id, Model model){
         carService.delCarFromId(id);
         return "redirect:/car/";
+    }
+
+    @GetMapping(value="/available/")
+    private String getRangeDate(){
+        return "rangeDate";
+    }
+
+    @GetMapping(value = "/available/list")
+    private String getCarAvailable(@RequestParam("startDate")@DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
+                                   @RequestParam("finishDate")@DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate finishDate,
+                                   Model model){
+        List<Car> carBooked = carService.getCarAvailable(startDate, finishDate);
+        model.addAttribute("carBooked", carBooked);
+        return "carAvailable";
+
     }
 }

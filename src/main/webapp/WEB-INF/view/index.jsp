@@ -9,8 +9,6 @@
         <button class="btn btn-primary" type="submit">Database</button>
     </form>
     <br><br>
-    <form action="rangeData.jsp" method="get">
-        <button class="btn btn-primary" type="submit">Auto Disponibili</button>
-    </form>
+    <a href="./car/available/" class="btn btn-primary">Car Available</a>
 </div>
 
