@@ -11,11 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "/booking")
 public class BookingController {
 
-    @Autowired
-    BookingService bookingService;
+    private final BookingService bookingService;
+
+    public BookingController(BookingService bookingService){
+        this.bookingService = bookingService;
+    }
 
     @GetMapping(value = "/")
-    public String getBookingList(Model model){
+    private String getBookingList(Model model){
         model.addAttribute("bookingList", bookingService.getAllBooking());
         return "bookingList";
     }

@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class IndexController {
 
     @GetMapping
-    public String getIndex(Model model)
+    private String getIndex(Model model)
     {
         return "index";
     }
 
     @GetMapping(value = "dati")
-    public String getDati(Model model)
+    private String getDati(Model model)
     {
         return "dati";
     }

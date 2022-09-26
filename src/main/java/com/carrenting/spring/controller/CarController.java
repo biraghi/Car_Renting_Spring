@@ -11,11 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "/car")
 public class CarController {
 
-    @Autowired
-    CarService carService;
+    private final CarService carService;
+
+    public CarController(CarService carService){
+        this.carService = carService;
+    }
 
     @GetMapping(value = "/")
-    public String getCarList(Model model){
+    private String getCarList(Model model){
         model.addAttribute("carList", carService.getAllCar());
         return "carList";
     }
