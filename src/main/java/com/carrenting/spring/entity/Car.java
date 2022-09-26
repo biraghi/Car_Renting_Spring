@@ -2,6 +2,7 @@ package com.carrenting.spring.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -23,6 +24,7 @@ public class Car {
     private String model;
 
     @Column(name="year_registration")
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate yearRegistration;
 
     @Column(name="license_plate")

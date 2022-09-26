@@ -1,10 +1,9 @@
 package com.carrenting.spring.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
-import java.sql.Timestamp;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
 
 @Entity
 public class Booking {
@@ -21,9 +20,11 @@ public class Booking {
     private Car car;
 
     @Column(name = "start_date")
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate startDate;
 
     @Column(name = "finish_date")
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate finishDate;
 
     @Column(name="approve")

@@ -9,12 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6ba960a-7aa1-4880-99c0-5779e3002243" name="Changes" comment="Constructor no @Autowired">
+    <list default="true" id="c6ba960a-7aa1-4880-99c0-5779e3002243" name="Changes" comment="Delete User">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/formCar.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/formUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/formUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/config/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/config/HibernateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/controller/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/controller/CarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/entity/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/entity/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/entity/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/entity/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/definitions/tiles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/definitions/tiles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/car.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/car.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +177,7 @@
       <option name="presentableId" value="Default" />
       <updated>1663745825052</updated>
       <workItem from="1663745826748" duration="25005000" />
-      <workItem from="1664175850452" duration="9682000" />
+      <workItem from="1664175850452" duration="11166000" />
     </task>
     <task id="LOCAL-00001" summary="User List">
       <created>1663761092716</created>
@@ -209,7 +214,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664177559145</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Update User">
+      <created>1664185956297</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1664185956297</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Delete User">
+      <created>1664186248113</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1664186248113</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,7 +251,9 @@
     <MESSAGE value="Booking List" />
     <MESSAGE value="Add User" />
     <MESSAGE value="Constructor no @Autowired" />
-    <option name="LAST_COMMIT_MESSAGE" value="Constructor no @Autowired" />
+    <MESSAGE value="Update User" />
+    <MESSAGE value="Delete User" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete User" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

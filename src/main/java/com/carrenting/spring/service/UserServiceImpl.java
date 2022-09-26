@@ -2,7 +2,6 @@ package com.carrenting.spring.service;
 
 import com.carrenting.spring.entity.User;
 import com.carrenting.spring.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
