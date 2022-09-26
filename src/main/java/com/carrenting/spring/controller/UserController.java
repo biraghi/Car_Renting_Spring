@@ -74,4 +74,10 @@ public class UserController {
             throw new Exception("Error");
         }
     }
+
+    @GetMapping(value = "/delete/{id}")
+    private String deleteUserById(@PathVariable("id")int id, Model model){
+        userService.delUserFromId(id);
+        return "redirect:/user/";
+    }
 }

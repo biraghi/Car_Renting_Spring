@@ -35,10 +35,7 @@
                         <a href="./update/${user.id}" class="btn btn-primary">Update</a>
                     </td>
                     <td>
-                        <form action="user-servlet" method="get">
-                            <input type="hidden" name="id" value="${user.id}">
-                            <button class="btn btn-primary" type="submit">Delete</button>
-                        </form>
+                        <a href="./delete/${user.id}" class="btn btn-primary">Delete</a>
                     </td>
                 </tr>
             </c:forEach>
