@@ -10,9 +10,7 @@
     <h1>Users</h1>
     <br>
     <div class="col-4">
-        <form action="./add" method="get">
-            <button class="btn btn-primary" type="submit">New User</button>
-        </form>
+        <a href="./add/" class="btn btn-primary">New User</a>
         <table class="table table-striped table-bordered table-sm">
             <caption>Users'List</caption>
             <tr>
