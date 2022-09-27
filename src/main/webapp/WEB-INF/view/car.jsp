@@ -7,7 +7,7 @@
 <div class="row">
   <h1>Cars</h1></br>
   <div class="col-4">
-    <a href="./add/" class="btn btn-primary">New Car</a>
+    <a href="./car/add/" class="btn btn-primary">New Car</a>
     <table class="table table-striped table-bordered table-sm">
       <tr>
         <th scope="col">License Plate</th>
@@ -27,10 +27,10 @@
           <fmt:parseDate  var="yearRegistration" pattern = "yyyy-MM-dd" value = "${car.yearRegistration}"/>
           <td><fmt:formatDate pattern = "dd-MM-yyyy" value = "${yearRegistration}" /></td>
           <td>
-            <a href="./update/${car.id}" class="btn btn-primary">Update</a>
+            <a href="./car/update/${car.id}" class="btn btn-primary">Update</a>
           </td>
           <td>
-            <a href="./delete/${car.id}" class="btn btn-primary">Delete</a>
+            <a href="./car/delete/${car.id}" class="btn btn-primary">Delete</a>
           </td>
         </tr>
       </c:forEach>

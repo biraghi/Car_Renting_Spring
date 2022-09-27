@@ -2,9 +2,9 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page session="true" %>
-
+<c:set var="path" value="http://localhost:8080/Car_Renting_Spring_war_exploded/car"/>
 <div class="col-2">
-    <form action="./car/" method="get">
+    <form action="${path}" method="get">
       <button class="btn btn-primary" type="submit">Back to Cars' List</button>
     </form>
   <br>

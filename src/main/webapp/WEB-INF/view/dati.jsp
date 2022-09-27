@@ -7,19 +7,19 @@
   <br/>
   <div class="row">
     <div class="col-sm-1">
-      <form action="./user/" method="get">
+      <form action="./user" method="get">
         <button class="btn btn-primary" type="submit">See Users</button>
       </form>
     </div>
 
     <div class="col-sm-1">
-      <form action="./car/" method="get">
+      <form action="./car" method="get">
         <button class="btn btn-primary" type="submit">See Cars</button>
       </form>
     </div>
 
     <div class="col-sm-1">
-      <form action="./booking/" method="get">
+      <form action="./booking" method="get">
         <button class="btn btn-primary" type="submit">See Bookings</button>
       </form>
     </div>

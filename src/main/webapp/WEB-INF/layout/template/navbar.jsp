@@ -27,9 +27,9 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="${path}/dati" role="button" data-bs-toggle="dropdown">Database</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="${path}/user/">Users</a></li>
-                            <li><a class="dropdown-item" href="${path}/car/">Cars</a></li>
-                            <li><a class="dropdown-item" href="${path}/booking/">Bookings</a></li>
+                            <li><a class="dropdown-item" href="${path}/user">Users</a></li>
+                            <li><a class="dropdown-item" href="${path}/car">Cars</a></li>
+                            <li><a class="dropdown-item" href="${path}/booking">Bookings</a></li>
                         </ul>
                     </li>
                     <span class="navbar-text">

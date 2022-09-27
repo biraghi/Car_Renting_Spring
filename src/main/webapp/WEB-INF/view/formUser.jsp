@@ -2,9 +2,9 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page session="true" %>
-
+<c:set var="path" value="http://localhost:8080/Car_Renting_Spring_war_exploded/user"/>
 <div class="col-2">
-    <form action="./user/" method="get">
+    <form action="${path}" method="get">
       <button class="btn btn-primary" type="submit">Back to User's List</button>
     </form>
   <br>
@@ -30,10 +30,6 @@
       <div class="form-group">
         <label for="username">Username</label>
         <form:input path="username" id="username" type="text" class="form-control" placeholder="Username"/>
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <form:input path="password" id="password" type="text" class="form-control" placeholder="Password"/>
       </div>
       <br>
       <div class="form-actions">

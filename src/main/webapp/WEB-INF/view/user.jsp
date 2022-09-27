@@ -10,7 +10,7 @@
     <h1>Users</h1>
     <br>
     <div class="col-4">
-        <a href="./add/" class="btn btn-primary">New User</a>
+        <a href="./user/add" class="btn btn-primary">New User</a>
         <table class="table table-striped table-bordered table-sm">
             <caption>Users'List</caption>
             <tr>
@@ -30,10 +30,10 @@
                     <fmt:parseDate  var="birthDate" pattern = "yyyy-MM-dd" value = "${user.birthDate}"/>
                     <td><fmt:formatDate pattern = "dd-MM-yyyy" value = "${birthDate}" /></td>
                     <td>
-                        <a href="./update/${user.id}" class="btn btn-primary">Update</a>
+                        <a href="./user/update/${user.id}" class="btn btn-primary">Update</a>
                     </td>
                     <td>
-                        <a href="./delete/${user.id}" class="btn btn-primary">Delete</a>
+                        <a href="./user/delete/${user.id}" class="btn btn-primary">Delete</a>
                     </td>
                 </tr>
             </c:forEach>

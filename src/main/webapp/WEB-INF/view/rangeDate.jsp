@@ -7,7 +7,7 @@
     <p>Inserire la data di inizio e di fine del noleggio</p>
     <br/>
     <div class="input-group mb-3 ">
-        <form action="./list" method="get">
+        <form action="./available/list" method="get">
             <p><strong>Start Date</strong></p>
             <input type="date" class="form-control" name="startDate"  aria-describedby="basic-addon2"><br>
             <p><strong>Finish Date</strong></p>

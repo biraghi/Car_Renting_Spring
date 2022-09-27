@@ -20,7 +20,7 @@ public class CarController {
         this.carService = carService;
     }
 
-    @GetMapping(value = "/")
+    @GetMapping
     private String getCarList(Model model){
         model.addAttribute("carList", carService.getAllCar());
         return "carList";
@@ -59,7 +59,7 @@ public class CarController {
         return "carForm";
     }
 
-    @PostMapping(value = "add")
+    @PostMapping(value = "/add")
     private String addCar(@ModelAttribute("newCar") Car car) throws Exception {
         try{
             carService.addCar(car);
@@ -76,7 +76,7 @@ public class CarController {
         return "redirect:/car/";
     }
 
-    @GetMapping(value="/available/")
+    @GetMapping(value="/available")
     private String getRangeDate(){
         return "rangeDate";
     }

@@ -3,11 +3,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page session="true" %>
 
+<c:set var="path" value="http://localhost:8080/Car_Renting_Spring_war_exploded/booking"/>
+
 <div class="col-2">
-    <form action="./booking/" method="get">
+    <form action="${path}" method="get">
       <button class="btn btn-primary" type="submit">Back to Bookings' List</button>
     </form>
   <br>
+
+
 
 
   <h4>New Booking</h4>
@@ -17,10 +21,7 @@
 
       <div class="form-group">
         <label for="username">User Username</label>
-        <form:select path="username" id="username" class="form-select">
-          <form:option selected="true" value="Select Username"></form:option>
-          <form:options items="${usernameList}"/>
-        </form:select>
+        <input type="text" readonly value="${username}" id="username" class="form-control"/>
       </div>
       <div class="form-group">
         <label for="licensePlate">License Plate</label>

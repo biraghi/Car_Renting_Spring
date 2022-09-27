@@ -25,7 +25,7 @@ public class UserController {
 
 
 
-    @GetMapping(value = "/")
+    @GetMapping
     private String getUserList(Model model)
     {
         List<User> userList = userService.getAllUser();
@@ -67,7 +67,7 @@ public class UserController {
         return "userForm";
     }
 
-    @PostMapping (value = "add")
+    @PostMapping (value = "/add")
     private String addUser(@ModelAttribute("newUser") User user) throws Exception {
         try{
             user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
