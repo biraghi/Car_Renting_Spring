@@ -9,6 +9,6 @@
         <button class="btn btn-primary" type="submit">Database</button>
     </form>
     <br><br>
-    <a href="./car/available" class="btn btn-primary">Car Available</a>
+    <a href="./car/available" class="btn btn-primary">Book Car</a>
 </div>
 
