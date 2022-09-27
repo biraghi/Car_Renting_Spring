@@ -1,5 +1,6 @@
 package com.carrenting.spring.controller;
 
+import com.carrenting.spring.entity.BookingDao;
 import com.carrenting.spring.entity.Car;
 import com.carrenting.spring.service.CarService;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -85,8 +86,12 @@ public class CarController {
     private String getCarAvailable(@RequestParam("startDate")@DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
                                    @RequestParam("finishDate")@DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate finishDate,
                                    Model model){
+        BookingDao booking = new BookingDao();
         List<Car> carBooked = carService.getCarAvailable(startDate, finishDate);
+        model.addAttribute("startDate", startDate);
+        model.addAttribute("finishDate", finishDate);
         model.addAttribute("carBooked", carBooked);
+        model.addAttribute("newBooking", booking);
         return "carAvailable";
 
     }

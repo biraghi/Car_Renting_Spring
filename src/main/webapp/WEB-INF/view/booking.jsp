@@ -3,6 +3,7 @@
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page session="true" %>
+<c:set var="path" value="http://localhost:8080/Car_Renting_Spring_war_exploded"/>
 
 
 <div>
@@ -10,7 +11,7 @@
   <h1>Booking</h1></br>
   <div class="col-4">
     <security:authorize access="hasRole('USER')">
-      <a href="./booking/add/" class="btn btn-primary">New Booking</a>
+      <a href="${path}/car/available" class="btn btn-primary">New Booking</a>
     </security:authorize>
 
     <table class="table table-striped table-bordered table-sm">
@@ -55,7 +56,7 @@
 
           <security:authorize access="hasRole('ADMIN')">
             <td>
-              <a href="./delete/${booking.id}" class="btn btn-primary">Delete</a>
+              <a href="./booking/delete/${booking.id}" class="btn btn-primary">Delete</a>
             </td>
           </security:authorize>
 
