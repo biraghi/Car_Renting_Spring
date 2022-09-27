@@ -3,6 +3,7 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html xml:lang="en">
 <head>
@@ -22,7 +23,7 @@
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
-                    <li><a class="nav-link" href="#">Logout</a></li>
+                    <li><a class="nav-link" href="${path}/login?logout">Logout</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="${path}/dati" role="button" data-bs-toggle="dropdown">Database</a>
                         <ul class="dropdown-menu">
@@ -31,6 +32,11 @@
                             <li><a class="dropdown-item" href="${path}/booking/">Bookings</a></li>
                         </ul>
                     </li>
+                    <span class="navbar-text">
+                    <security:authorize access="isAuthenticated()">
+                        <security:authentication property="principal.username"/>
+                    </security:authorize>
+                    </span>
                 </ul>
             </div>
         </div>

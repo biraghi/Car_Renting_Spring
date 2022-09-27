@@ -2,22 +2,25 @@ package com.carrenting.spring.controller;
 
 import com.carrenting.spring.entity.User;
 import com.carrenting.spring.service.UserService;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 @Controller
 @RequestMapping(value = "/user")
 public class UserController {
-    /*
-    @Autowired
-    UserService userService;*/
 
     private final UserService userService;
-    public UserController(UserService userService){
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
+    public UserController(UserService userService, BCryptPasswordEncoder bCryptPasswordEncoder){
         this.userService = userService;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
 
@@ -67,6 +70,7 @@ public class UserController {
     @PostMapping (value = "add")
     private String addUser(@ModelAttribute("newUser") User user) throws Exception {
         try{
+            user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
             userService.addUser(user);
             return "redirect:/user/";
         }

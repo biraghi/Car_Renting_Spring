@@ -8,6 +8,10 @@
         <put-attribute name="content" value=""/>
     </definition>
 
+    <definition name="login" template="/WEB-INF/view/login.jsp">
+        <put-attribute name="titolo" value="Login"/>
+    </definition>
+
     <definition name="index" extends="baseLayout">
         <put-attribute name="titolo" value="Car Renting"/>
         <put-attribute name="content" value="/WEB-INF/view/index.jsp"/>
