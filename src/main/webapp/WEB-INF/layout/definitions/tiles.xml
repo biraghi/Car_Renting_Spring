@@ -37,6 +37,16 @@
         <put-attribute name="content" value="/WEB-INF/view/formUser.jsp"/>
     </definition>
 
+    <definition name="profile" extends="baseLayout">
+        <put-attribute name="titolo" value="Profile"/>
+        <put-attribute name="content" value="/WEB-INF/view/profile.jsp"/>
+    </definition>
+
+    <definition name="changePassword" extends="baseLayout">
+        <put-attribute name="titolo" value="Change Password"/>
+        <put-attribute name="content" value="/WEB-INF/view/changePassword.jsp"/>
+    </definition>
+
     <definition name="bookingList" extends="baseLayout">
         <put-attribute name="titolo" value="Booking List"/>
         <put-attribute name="content" value="/WEB-INF/view/booking.jsp"/>

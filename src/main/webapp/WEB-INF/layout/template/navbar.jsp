@@ -37,7 +37,7 @@
             </div>
             <form class="d-flex justify-content-end">
                 <security:authorize access="isAuthenticated()">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="${path}/profile">
                         <span class="bi-person"></span>
                             ${sessionScope.userLogged.firstname} ${sessionScope.userLogged.lastname}
                     </a>

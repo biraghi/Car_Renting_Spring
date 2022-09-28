@@ -38,6 +38,7 @@ public class UserController {
     {
         User user = userService.getUserFromId(id);
         model.addAttribute("newUser", user);
+        model.addAttribute("type", "update");
         return "userForm";
     }
 
@@ -49,7 +50,6 @@ public class UserController {
             oldUser.setLastname(newUser.getLastname());
             oldUser.setBirthDate(newUser.getBirthDate());
             oldUser.setUsername(newUser.getUsername());
-            oldUser.setPassword(newUser.getPassword());
             userService.addUser(oldUser);
 
             return "redirect:/user/";
@@ -64,6 +64,7 @@ public class UserController {
     {
         User user = new User();
         model.addAttribute("newUser", user);
+        model.addAttribute("type", "add");
         return "userForm";
     }
 

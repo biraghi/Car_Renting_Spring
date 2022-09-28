@@ -3,16 +3,22 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page session="true" %>
 <c:set var="path" value="http://localhost:8080/Car_Renting_Spring_war_exploded/user"/>
-<div class="col-2">
-    <form action="${path}" method="get">
-      <button class="btn btn-primary" type="submit">Back to User's List</button>
-    </form>
+
+<div class="container col-3">
   <br>
-
-
-  <h4>New User</h4>
+  <h4>Bentornato ${sessionScope.userLogged.firstname} ${sessionScope.userLogged.lastname}</h4>
+  <c:if test="${param.success != null}">
+    <div class="alert alert-success">
+      <p>Save Success</p>
+    </div>
+  </c:if>
+  <c:if test="${param.succPass != null}">
+    <div class="alert alert-success">
+      <p>Change Password Success</p>
+    </div>
+  </c:if>
   <div class="portlet-body form">
-    <form:form method="post" modelAttribute="newUser">
+    <form:form method="post" modelAttribute="userProfile">
     <div class="form-body">
 
       <div class="form-group">
@@ -31,17 +37,11 @@
         <label for="username">Username</label>
         <form:input path="username" id="username" type="text" class="form-control" placeholder="Username"/>
       </div>
-      <c:if test="${type.equals('add')}">
-        <div class="form-group">
-          <label for="password">Password</label>
-          <form:input path="password" id="password" type="text" class="form-control" placeholder="Password"/>
-        </div>
-      </c:if>
-
       <br>
       <div class="form-actions">
         <form:input path="id" id="id" type="hidden"/>
-        <button class="btn btn-primary form-buttons" type="submit">Submit</button>
+        <a class="btn btn-primary form-buttons" href="./profile/password">Change Password</a>
+        <button class="btn btn-primary form-buttons offset-md-4" type="submit">Save</button>
       </div>
 
       </form:form>
