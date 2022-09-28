@@ -8,6 +8,7 @@
 <html xml:lang="en">
 <head>
     <c:set var="path" value="http://localhost:8080/Car_Renting_Spring_war_exploded"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <script src="${path}/webjars/bootstrap/5.2.0/js/bootstrap.min.js"></script>
     <script src="${path}/webjars/bootstrap/5.2.0/js/bootstrap.bundle.js"></script>
     <link rel="stylesheet" type="text/css" href="${path}/webjars/bootstrap/5.2.0/css/bootstrap.min.css"/>
@@ -32,13 +33,16 @@
                             <li><a class="dropdown-item" href="${path}/booking">Bookings</a></li>
                         </ul>
                     </li>
-                    <span class="navbar-text">
-                    <security:authorize access="isAuthenticated()">
-                        <security:authentication property="principal.username"/>
-                    </security:authorize>
-                    </span>
                 </ul>
             </div>
+            <form class="d-flex justify-content-end">
+                <security:authorize access="isAuthenticated()">
+                    <a class="navbar-brand" href="#">
+                        <span class="bi-person"></span>
+                            ${sessionScope.userLogged.firstname} ${sessionScope.userLogged.lastname}
+                    </a>
+                </security:authorize>
+            </form>
         </div>
     </nav>
 </div>
