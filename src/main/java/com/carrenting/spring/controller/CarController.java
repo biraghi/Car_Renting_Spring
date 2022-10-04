@@ -46,7 +46,7 @@ public class CarController {
             oldCar.setYearRegistration(newCar.getYearRegistration());
             carService.addCar(oldCar);
 
-            return "redirect:/car/";
+            return "redirect:/car";
         }
         catch (Exception ex){
             throw new Exception("Error");
@@ -64,7 +64,7 @@ public class CarController {
     private String addCar(@ModelAttribute("newCar") Car car) throws Exception {
         try{
             carService.addCar(car);
-            return "redirect:/car/";
+            return "redirect:/car";
         }
         catch (Exception ex){
             throw new Exception("Error");
@@ -74,7 +74,7 @@ public class CarController {
     @GetMapping(value = "/delete/{id}")
     private String deleteCarById(@PathVariable("id")int id, Model model){
         carService.delCarFromId(id);
-        return "redirect:/car/";
+        return "redirect:/car";
     }
 
     @GetMapping(value="/available")

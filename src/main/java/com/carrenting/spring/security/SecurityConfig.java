@@ -15,7 +15,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 
 @Configuration
@@ -70,7 +70,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(final HttpSecurity http) throws Exception{
         http
                 .authorizeRequests()
-                .mvcMatchers("/login").permitAll()
+                .mvcMatchers("/login/**").permitAll()
+                .mvcMatchers("/webjars/**").permitAll()
                 .mvcMatchers(ADMIN_MATCHER).hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
@@ -79,10 +80,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         .loginProcessingUrl("/login")
                         .failureUrl("/login?error")
                         .defaultSuccessUrl("/", true)
-                        .permitAll()
                 .and()
                     .logout()
-                        .permitAll()
+                    .logoutUrl("/logout")
+                    .logoutSuccessUrl("/login?logout")
+                    .invalidateHttpSession(true)
+                    .deleteCookies("JSESSIONID")
+                    .permitAll()
                 .and()
                     .exceptionHandling()
                     .accessDeniedPage("/login?error")

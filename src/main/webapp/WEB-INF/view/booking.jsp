@@ -46,7 +46,7 @@
           <security:authorize access="hasRole('ADMIN')">
             <c:if test="${booking.approve == false}">
               <td>
-                <a href="./approve/${booking.id}" class="btn btn-primary">Approve</a>
+                <a href="./booking/approve/${booking.id}" class="btn btn-primary">Approve</a>
               </td>
             </c:if>
             <c:if test="${booking.approve == true}">

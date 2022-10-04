@@ -3,6 +3,8 @@ package com.carrenting.spring.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.validation.Validator;
+import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
@@ -24,6 +26,11 @@ public class WebApplicationContextConfig implements WebMvcConfigurer {
         registry.viewResolver(viewResolver);
     }
 
+    @Override
+    public Validator getValidator() {
+        return validator();
+    }
+
     @Bean
     public InternalResourceViewResolver getInternalResourceViewResolver(){
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
@@ -34,4 +41,11 @@ public class WebApplicationContextConfig implements WebMvcConfigurer {
 
         return resolver;
     }
+
+    @Bean(name="validator")
+    public LocalValidatorFactoryBean validator(){
+        LocalValidatorFactoryBean bean =  new LocalValidatorFactoryBean();
+        return bean;
+    }
+
 }

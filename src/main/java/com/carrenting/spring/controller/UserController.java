@@ -2,11 +2,14 @@ package com.carrenting.spring.controller;
 
 import com.carrenting.spring.entity.User;
 import com.carrenting.spring.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
@@ -18,6 +21,7 @@ public class UserController {
 
     private final UserService userService;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
+
     public UserController(UserService userService, BCryptPasswordEncoder bCryptPasswordEncoder){
         this.userService = userService;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
@@ -52,7 +56,7 @@ public class UserController {
             oldUser.setUsername(newUser.getUsername());
             userService.addUser(oldUser);
 
-            return "redirect:/user/";
+            return "redirect:/user";
         }
         catch (Exception ex){
             throw new Exception("Error");
@@ -69,20 +73,21 @@ public class UserController {
     }
 
     @PostMapping (value = "/add")
-    private String addUser(@ModelAttribute("newUser") User user) throws Exception {
-        try{
-            user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-            userService.addUser(user);
-            return "redirect:/user/";
+    private String addUser(@ModelAttribute("newUser") @Validated User user, BindingResult bindingResult) throws Exception {
+        if (bindingResult.hasErrors()){
+            return "userForm";
         }
-        catch (Exception ex){
-            throw new Exception("Error");
-        }
+
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        userService.addUser(user);
+        return "redirect:/user";
+
+
     }
 
     @GetMapping(value = "/delete/{id}")
     private String deleteUserById(@PathVariable("id")int id, Model model){
         userService.delUserFromId(id);
-        return "redirect:/user/";
+        return "redirect:/user";
     }
 }

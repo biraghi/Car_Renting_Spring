@@ -63,7 +63,7 @@ public class BookingController {
             booking.setStartDate(newBooking.getStartDate());
             booking.setFinishDate(newBooking.getFinishDate());
             bookingService.addBooking(booking);
-            return "redirect:/booking/";
+            return "redirect:/booking";
         }
         catch (Exception ex){
             throw new Exception("Error");
@@ -73,7 +73,7 @@ public class BookingController {
     @GetMapping(value = "/delete/{id}")
     private String deleteBookingById(@PathVariable("id")int id, Model model){
         bookingService.delBookingFromId(id);
-        return "redirect:/booking/";
+        return "redirect:/booking";
     }
 
     @GetMapping(value = "/approve/{id}")
@@ -81,6 +81,6 @@ public class BookingController {
         Booking booking = bookingService.getBookingFromId(id);
         booking.setApprove(true);
         bookingService.addBooking(booking);
-        return "redirect:/booking/";
+        return "redirect:/booking";
     }
 }

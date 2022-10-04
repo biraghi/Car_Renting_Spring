@@ -1,7 +1,12 @@
 package com.carrenting.spring.entity;
 
 
+import com.carrenting.spring.validation.ValidPassword;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.validation.constraints.FutureOrPresent;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -18,19 +23,25 @@ public class User {
     private int id;
 
     @Column(name = "username")
+    @NotBlank(message = "Username cannot be null")
     private String username;
 
     @Column(name="password")
+    @Min(value = 8)
+    @ValidPassword
     private String password;
 
     @Column(name="firstname")
+    @NotBlank(message = "Firstname cannot be null")
     private String firstname;
 
     @Column(name = "lastname")
+    @NotBlank@NotBlank(message = "Lastname cannot be null")
     private String lastname;
 
     @Column(name = "birth_date")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    @FutureOrPresent
     private LocalDate birthDate;
 
     @Column(name = "admin")

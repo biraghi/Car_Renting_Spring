@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class CarServiceImpl implements CarService{
@@ -55,13 +56,19 @@ public class CarServiceImpl implements CarService{
         if (carBooked.isEmpty()) {
             carSet.addAll(allCars);
         }
-        for (Car car : allCars) {
-            for (Car ob : carBooked) {
+
+        carSet.addAll(allCars.stream().filter(
+                car -> !carBooked.stream().map(Car::getId).collect(Collectors.toList()).contains(car.getId())).collect(Collectors.toList()));
+        /*
+        for (Car car : carBooked) {
+            for (Car ob : allCars) {
                 if (ob.getId() != car.getId()){
-                    carSet.add(car);
+                    carSet.add(ob);
                 }
             }
         }
+
+         */
         carsDisp.addAll(carSet);
 
         return carsDisp;

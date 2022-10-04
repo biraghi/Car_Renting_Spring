@@ -37,10 +37,10 @@
                     <td><fmt:formatDate pattern = "dd-MM-yyyy" value = "${birthDate}" /></td>
                     <security:authorize access="hasRole('ADMIN')">
                         <td>
-                            <a href="./update/${user.id}" class="btn btn-primary">Update</a>
+                            <a href="./user/update/${user.id}" class="btn btn-primary">Update</a>
                         </td>
                         <td>
-                            <a href="./delete/${user.id}" class="btn btn-primary">Delete</a>
+                            <a href="./user/delete/${user.id}" class="btn btn-primary">Delete</a>
                         </td>
                     </security:authorize>
 
