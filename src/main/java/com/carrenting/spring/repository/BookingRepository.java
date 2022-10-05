@@ -1,7 +1,6 @@
 package com.carrenting.spring.repository;
 
 import com.carrenting.spring.entity.Booking;
-import com.carrenting.spring.entity.User;
 
 import java.util.List;
 

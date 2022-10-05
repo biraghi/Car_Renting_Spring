@@ -1,13 +1,15 @@
 package com.carrenting.spring.controller;
 
-import com.carrenting.spring.entity.BookingDao;
+import com.carrenting.spring.entity.BookingForm;
 import com.carrenting.spring.entity.Car;
 import com.carrenting.spring.service.CarService;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -36,21 +38,18 @@ public class CarController {
     }
 
     @PostMapping (value = "update/{id}")
-    private String updateCar(@ModelAttribute("newCar") Car newCar) throws Exception {
-        try{
-            Car oldCar = carService.getCarFromId(newCar.getId());
-            oldCar.setLicensePlate(newCar.getLicensePlate());
-            oldCar.setManufacturer(newCar.getManufacturer());
-            oldCar.setModel(newCar.getModel());
-            oldCar.setTypeName(newCar.getTypeName());
-            oldCar.setYearRegistration(newCar.getYearRegistration());
-            carService.addCar(oldCar);
+    private String updateCar(@Valid @ModelAttribute("newCar") Car newCar, BindingResult bindingResult, Model model){
+        if (bindingResult.hasErrors()){
+            return "carForm";
+        }
+        Car oldCar = carService.getCarFromId(newCar.getId());
+        if(carService.getCarFromLicensePlate(newCar.getLicensePlate()) != null && !newCar.getLicensePlate().equals(oldCar.getLicensePlate())){
+            model.addAttribute("error", "License Plate is present");
+            return "carForm";
+        }
+        carService.addCar(carService.setParamForUpdate(oldCar, newCar));
 
-            return "redirect:/car";
-        }
-        catch (Exception ex){
-            throw new Exception("Error");
-        }
+        return "redirect:/car";
     }
 
     @GetMapping(value = "/add")
@@ -61,14 +60,17 @@ public class CarController {
     }
 
     @PostMapping(value = "/add")
-    private String addCar(@ModelAttribute("newCar") Car car) throws Exception {
-        try{
+    private String addCar(@Valid @ModelAttribute("newCar") Car car, BindingResult bindingResult, Model model){
+        if (bindingResult.hasErrors()){
+            return "carForm";
+        }
+        if(carService.getCarFromLicensePlate(car.getLicensePlate()) == null){
             carService.addCar(car);
             return "redirect:/car";
         }
-        catch (Exception ex){
-            throw new Exception("Error");
-        }
+        model.addAttribute("error", "License Plate is present");
+        return "carForm";
+
     }
 
     @GetMapping(value = "/delete/{id}")
@@ -86,7 +88,7 @@ public class CarController {
     private String getCarAvailable(@RequestParam("startDate")@DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
                                    @RequestParam("finishDate")@DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate finishDate,
                                    Model model){
-        BookingDao booking = new BookingDao();
+        BookingForm booking = new BookingForm();
         List<Car> carBooked = carService.getCarAvailable(startDate, finishDate);
         model.addAttribute("startDate", startDate);
         model.addAttribute("finishDate", finishDate);

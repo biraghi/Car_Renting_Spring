@@ -59,18 +59,18 @@ public class CarServiceImpl implements CarService{
 
         carSet.addAll(allCars.stream().filter(
                 car -> !carBooked.stream().map(Car::getId).collect(Collectors.toList()).contains(car.getId())).collect(Collectors.toList()));
-        /*
-        for (Car car : carBooked) {
-            for (Car ob : allCars) {
-                if (ob.getId() != car.getId()){
-                    carSet.add(ob);
-                }
-            }
-        }
-
-         */
         carsDisp.addAll(carSet);
 
         return carsDisp;
+    }
+
+    @Override
+    public Car setParamForUpdate(Car oldC, Car newC) {
+        oldC.setLicensePlate(newC.getLicensePlate());
+        oldC.setManufacturer(newC.getManufacturer());
+        oldC.setModel(newC.getModel());
+        oldC.setTypeName(newC.getTypeName());
+        oldC.setYearRegistration(newC.getYearRegistration());
+        return oldC;
     }
 }

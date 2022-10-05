@@ -14,4 +14,6 @@ public interface UserService {
     void addUser(User user);
 
     void delUserFromId(int id);
+
+    User setParamForUpdate(User oldU, User newU);
 }

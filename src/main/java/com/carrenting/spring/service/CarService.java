@@ -17,4 +17,6 @@ public interface CarService {
     void delCarFromId(int id);
 
     List<Car> getCarAvailable(LocalDate startDate, LocalDate finishDate);
+
+    Car setParamForUpdate(Car oldC, Car newC);
 }

@@ -1,13 +1,11 @@
 package com.carrenting.spring.controller;
 
 import com.carrenting.spring.entity.Booking;
-import com.carrenting.spring.entity.BookingDao;
+import com.carrenting.spring.entity.BookingForm;
 import com.carrenting.spring.entity.Car;
-import com.carrenting.spring.entity.User;
 import com.carrenting.spring.service.BookingService;
 import com.carrenting.spring.service.CarService;
 import com.carrenting.spring.service.UserService;
-import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -38,7 +36,7 @@ public class BookingController {
 
     @GetMapping(value = "/add")
     private String getBookingForm(Principal principal, Model model){
-        BookingDao booking = new BookingDao();
+        BookingForm booking = new BookingForm();
         List<Car> carList = carService.getAllCar();
         List<String> licensePLateList = new ArrayList<>();
         String username = principal.getName();
@@ -54,20 +52,11 @@ public class BookingController {
     }
 
     @PostMapping(value = "/add")
-    private String addBooking(@ModelAttribute("newBooking") BookingDao newBooking, Principal principal) throws Exception {
-        String username = principal.getName();
-        try{
-            Booking booking = new Booking();
-            booking.setCar(carService.getCarFromLicensePlate(newBooking.getLicensePlate()));
-            booking.setUser(userService.getUserFromUsername(username));
-            booking.setStartDate(newBooking.getStartDate());
-            booking.setFinishDate(newBooking.getFinishDate());
-            bookingService.addBooking(booking);
+    private String addBooking(@ModelAttribute("newBooking") BookingForm newBooking, Principal principal){
+            bookingService.addBooking(bookingService.setBookingFromForm(newBooking, principal.getName()));
             return "redirect:/booking";
-        }
-        catch (Exception ex){
-            throw new Exception("Error");
-        }
+
+
     }
 
     @GetMapping(value = "/delete/{id}")

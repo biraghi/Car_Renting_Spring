@@ -68,11 +68,7 @@ public class ProfileController {
             model.addAttribute("error", "Username già presente");
             return "profile";
         }
-        oldUserProfile.setFirstname(newUserProfile.getFirstname());
-        oldUserProfile.setLastname(newUserProfile.getLastname());
-        oldUserProfile.setBirthDate(newUserProfile.getBirthDate());
-        oldUserProfile.setUsername(newUserProfile.getUsername());
-        userService.addUser(oldUserProfile);
+        userService.addUser(userService.setParamForUpdate(oldUserProfile, newUserProfile));
         httpSession.setAttribute("userLogged", oldUserProfile);
         return "redirect:/profile?success";
 

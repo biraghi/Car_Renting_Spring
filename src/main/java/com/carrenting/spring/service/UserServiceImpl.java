@@ -38,4 +38,13 @@ public class UserServiceImpl implements UserService{
     public void delUserFromId(int id) {
         userRepository.delUserFromId(id);
     }
+
+    @Override
+    public User setParamForUpdate(User oldU, User newU) {
+        oldU.setFirstname(newU.getFirstname());
+        oldU.setLastname(newU.getLastname());
+        oldU.setBirthDate(newU.getBirthDate());
+        oldU.setUsername(newU.getUsername());
+        return oldU;
+    }
 }

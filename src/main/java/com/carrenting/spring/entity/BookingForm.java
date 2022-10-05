@@ -4,7 +4,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
-public class BookingDao {
+public class BookingForm {
     private String username;
     private String licensePlate;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
@@ -12,9 +12,9 @@ public class BookingDao {
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate finishDate;
 
-    public BookingDao() {}
+    public BookingForm() {}
 
-    public BookingDao(String username, String licensePlate, LocalDate startDate, LocalDate finishDate) {
+    public BookingForm(String username, String licensePlate, LocalDate startDate, LocalDate finishDate) {
         this.username = username;
         this.licensePlate = licensePlate;
         this.startDate = startDate;

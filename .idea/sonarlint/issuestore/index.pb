@@ -1,12 +1,4 @@
 
-c
-3src/main/java/com/carrenting/spring/entity/Car.java,1\b\1b748ebd0ae04f3dcec9cf4deb13e43458a91db2
-o
-?src/main/java/com/carrenting/spring/service/BookingService.java,1\6\168d6d406f77cd34f00b9835c92d3662c8c9bcc9
-s
-Csrc/main/java/com/carrenting/spring/service/BookingServiceImpl.java,0\a\0ac5d220a8e920de54f8c2adb20116f5cdb0620c
-y
-Isrc/main/java/com/carrenting/spring/repository/BookingRepositoryImpl.java,5\a\5a2bd3aaa6e2e884477d94b05129633a6d8edbe7
 q
 Asrc/main/java/com/carrenting/spring/repository/CarRepository.java,a\f\af794bad1705a69b267dc63b9f0c14de1a7db147
 k
@@ -19,8 +11,6 @@ Lsrc/main/java/com/carrenting/spring/config/DispatcherServletInitializer.java,3
 Ksrc/main/java/com/carrenting/spring/security/WebAppSecurityInitializer.java,5\b\5b09e993832f41504bcb19149221160ad3e4996c
 U
 %src/main/webapp/WEB-INF/view/dati.jsp,7\1\71c8effd4f89471dad085d9046f66e85484b8b9f
-X
-(src/main/webapp/WEB-INF/view/formCar.jsp,2\b\2b9f15ba5b431cc2bd392cc57d59a9a0a15dfffc
 \
 ,src/main/webapp/WEB-INF/view/formBooking.jsp,2\d\2d057602c97b990006f464c4577bb60f96fe9db4
 ]
@@ -33,10 +23,6 @@ _
 /src/main/webapp/WEB-INF/view/changePassword.jsp,b\4\b48facc7e89e4fcaf794fe9c9497312f6cca8509
 d
 4src/main/webapp/WEB-INF/layout/definitions/tiles.xml,c\b\cb91177f672cc741b9142294bb7635c9f5c293e2
-k
-;src/main/java/com/carrenting/spring/service/CarService.java,a\f\afdafffde1a5a7e1b5ca836e49918d4cb02f69f4
-u
-Esrc/main/java/com/carrenting/spring/repository/CarRepositoryImpl.java,a\d\ad6892813304aab735e40229e7115f2a0926f520
 y
 Isrc/main/java/com/carrenting/spring/security/CustomUserDetailService.java,9\5\953faf82ae760e5585c615b68a166281e69380ca
 V

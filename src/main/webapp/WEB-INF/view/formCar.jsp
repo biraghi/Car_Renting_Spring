@@ -8,7 +8,11 @@
       <button class="btn btn-primary" type="submit">Back to Cars' List</button>
     </form>
   <br>
-
+  <c:if test="${error != null}">
+    <div class="alert alert-danger">
+      <p>${error}</p>
+    </div>
+  </c:if>
 
   <h4>New Car</h4>
   <div class="portlet-body form">
@@ -18,22 +22,27 @@
       <div class="form-group">
         <label for="licensePlate">License Plate</label>
         <form:input path="licensePlate" id="licensePlate" type="text" class="form-control" placeholder="License Plate"/>
+        <form:errors path="licensePlate" cssClass="text-danger"/>
       </div>
       <div class="form-group">
         <label for="manufacturer">Manufacturer</label>
         <form:input path="manufacturer" id="manufacturer" type="text" class="form-control" placeholder="Manufacturer"/>
+        <form:errors path="manufacturer" cssClass="text-danger"/>
       </div>
       <div class="form-group">
         <label for="model">Model</label>
         <form:input path="model" id="model" type="text" class="form-control" placeholder="Model"/>
+        <form:errors path="model" cssClass="text-danger"/>
       </div>
       <div class="form-group">
         <label for="typeName">Type Name</label>
         <form:input path="typeName" id="typeName" type="text" class="form-control" placeholder="Type Name"/>
+        <form:errors path="typeName" cssClass="text-danger"/>
       </div>
       <div class="form-group">
         <label for="yearRegistration">Year Registration</label>
         <form:input path="yearRegistration" id="yearRegistration" type="date" class="form-control"/>
+        <form:errors path="yearRegistration" cssClass="text-danger"/>
       </div>
       <br>
       <div class="form-actions">

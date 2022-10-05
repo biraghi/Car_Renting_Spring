@@ -67,7 +67,7 @@ public class UserController {
             userService.addUser(user);
             return "redirect:/user";
         }
-            model.addAttribute("error", "Username già presente");
+            model.addAttribute("error", "Username is present");
             model.addAttribute("type", "add");
             return "userForm";
 
@@ -84,15 +84,11 @@ public class UserController {
 
         User oldUser = userService.getUserFromId(newUser.getId());
         if(userService.getUserFromUsername(newUser.getUsername()) != null && !newUser.getUsername().equals(oldUser.getUsername())){
-            model.addAttribute("error", "Username già presente");
+            model.addAttribute("error", "Username is present");
             model.addAttribute("type", "update");
             return "userForm";
         }
-        oldUser.setFirstname(newUser.getFirstname());
-        oldUser.setLastname(newUser.getLastname());
-        oldUser.setBirthDate(newUser.getBirthDate());
-        oldUser.setUsername(newUser.getUsername());
-        userService.addUser(oldUser);
+        userService.addUser(userService.setParamForUpdate(oldUser, newUser));
 
         return "redirect:/user";
 

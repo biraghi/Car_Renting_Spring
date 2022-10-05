@@ -35,6 +35,9 @@ public class CarRepositoryImpl implements CarRepository{
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session.createQuery("from Car where license_plate = '" + licensePlate + "'", Car.class).getSingleResult();
         }
+        catch (Exception e){
+            return null;
+        }
     }
 
     @Override
