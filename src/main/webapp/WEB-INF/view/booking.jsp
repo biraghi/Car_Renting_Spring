@@ -56,7 +56,7 @@
 
           <security:authorize access="hasRole('ADMIN')">
             <td>
-              <a href="./delete/${booking.id}" class="btn btn-primary">Delete</a>
+              <a href="./booking/delete/${booking.id}" class="btn btn-primary">Delete</a>
             </td>
           </security:authorize>
 

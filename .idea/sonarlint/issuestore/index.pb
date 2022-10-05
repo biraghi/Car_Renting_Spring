@@ -11,8 +11,6 @@ Lsrc/main/java/com/carrenting/spring/config/DispatcherServletInitializer.java,3
 Ksrc/main/java/com/carrenting/spring/security/WebAppSecurityInitializer.java,5\b\5b09e993832f41504bcb19149221160ad3e4996c
 U
 %src/main/webapp/WEB-INF/view/dati.jsp,7\1\71c8effd4f89471dad085d9046f66e85484b8b9f
-\
-,src/main/webapp/WEB-INF/view/formBooking.jsp,2\d\2d057602c97b990006f464c4577bb60f96fe9db4
 ]
 -src/main/webapp/WEB-INF/view/carAvailable.jsp,e\6\e6f4b9220c61ab44727fc53acac9cf2510d7e6da
 V
