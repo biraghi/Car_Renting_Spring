@@ -4,8 +4,6 @@ package com.carrenting.spring.validation;
 import org.passay.*;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 import org.passay.PasswordValidator;
 
 import javax.validation.ConstraintValidator;
@@ -44,6 +42,9 @@ public class PasswordValidatorCustom implements ConstraintValidator<ValidPasswor
         if (result.isValid()) {
             return true;
         }
-        return false;
+        else{
+            return false;
+        }
+
     }
 }

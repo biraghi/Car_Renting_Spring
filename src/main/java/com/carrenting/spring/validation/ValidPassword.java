@@ -11,7 +11,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 @Documented
 @Constraint(validatedBy = PasswordValidatorCustom.class)
-@Target({ FIELD, ANNOTATION_TYPE })
+@Target({ElementType.PARAMETER, FIELD, ANNOTATION_TYPE })
 @Retention(RUNTIME)
 public @interface ValidPassword {
     String message() default "{ValidPassword.User.password.validation}";
