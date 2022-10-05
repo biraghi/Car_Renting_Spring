@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.security.Principal;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping(value = "/user")
@@ -61,10 +62,15 @@ public class UserController {
             model.addAttribute("type", "add");
             return "userForm";
         }
+        if(userService.getUserFromUsername(user.getUsername()) == null){
+            user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+            userService.addUser(user);
+            return "redirect:/user";
+        }
+            model.addAttribute("error", "Username già presente");
+            model.addAttribute("type", "add");
+            return "userForm";
 
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        userService.addUser(user);
-        return "redirect:/user";
 
 
     }
@@ -77,6 +83,11 @@ public class UserController {
         }
 
         User oldUser = userService.getUserFromId(newUser.getId());
+        if(userService.getUserFromUsername(newUser.getUsername()) != null && !newUser.getUsername().equals(oldUser.getUsername())){
+            model.addAttribute("error", "Username già presente");
+            model.addAttribute("type", "update");
+            return "userForm";
+        }
         oldUser.setFirstname(newUser.getFirstname());
         oldUser.setLastname(newUser.getLastname());
         oldUser.setBirthDate(newUser.getBirthDate());

@@ -33,10 +33,10 @@
           <td><fmt:formatDate pattern = "dd-MM-yyyy" value = "${yearRegistration}" /></td>
           <security:authorize access="hasRole('ADMIN')">
           <td>
-            <a href="./update/${car.id}" class="btn btn-primary">Update</a>
+            <a href="./car/update/${car.id}" class="btn btn-primary">Update</a>
           </td>
           <td>
-            <a href="./delete/${car.id}" class="btn btn-primary">Delete</a>
+            <a href="./car/delete/${car.id}" class="btn btn-primary">Delete</a>
           </td>
           </security:authorize>
         </tr>

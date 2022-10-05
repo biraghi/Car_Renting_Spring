@@ -9,17 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6ba960a-7aa1-4880-99c0-5779e3002243" name="Changes" comment="Annotation">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="c6ba960a-7aa1-4880-99c0-5779e3002243" name="Changes" comment="Validation User">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/config/WebApplicationContextConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/config/WebApplicationContextConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/controller/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/controller/ProfileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/validation/PasswordValidatorCustom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/validation/PasswordValidatorCustom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/validation/ValidPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/validation/ValidPassword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/repository/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/carrenting/spring/repository/UserRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/formUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/formUser.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/profile.jsp" afterDir="false" />
     </list>
@@ -180,7 +174,7 @@
       <updated>1663745825052</updated>
       <workItem from="1663745826748" duration="25005000" />
       <workItem from="1664175850452" duration="80146000" />
-      <workItem from="1664377515503" duration="10373000" />
+      <workItem from="1664377515503" duration="13776000" />
     </task>
     <task id="LOCAL-00001" summary="User List">
       <created>1663761092716</created>
@@ -308,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664874210368</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Validation User">
+      <created>1664960415572</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1664960415572</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,7 +343,8 @@
     <MESSAGE value="Profile navbar" />
     <MESSAGE value="Profile + changePassword" />
     <MESSAGE value="Annotation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Annotation" />
+    <MESSAGE value="Validation User" />
+    <option name="LAST_COMMIT_MESSAGE" value="Validation User" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -369,18 +371,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/carrenting/spring/controller/UserController.java</url>
-          <line>59</line>
+          <line>60</line>
           <option name="timeStamp" value="67" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/carrenting/spring/controller/UserController.java</url>
-          <line>73</line>
-          <option name="timeStamp" value="68" />
+          <line>84</line>
+          <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/carrenting/spring/controller/UserController.java</url>
-          <line>78</line>
-          <option name="timeStamp" value="69" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/carrenting/spring/controller/ProfileController.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="70" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="org.hibernate.TransientObjectException" package="org.hibernate" />

@@ -17,6 +17,11 @@
       <p>Change Password Success</p>
     </div>
   </c:if>
+  <c:if test="${error != null}">
+    <div class="alert alert-danger">
+      <p>${error}</p>
+    </div>
+  </c:if>
   <div class="portlet-body form">
     <form:form method="post" modelAttribute="userProfile">
     <div class="form-body">

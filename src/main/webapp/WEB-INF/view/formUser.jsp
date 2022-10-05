@@ -8,6 +8,11 @@
         <button class="btn btn-primary" type="submit">Back to User's List</button>
     </form>
     <br>
+    <c:if test="${error != null}">
+        <div class="alert alert-danger">
+            <p>${error}</p>
+        </div>
+    </c:if>
 
 
     <h4>New User</h4>

@@ -30,6 +30,9 @@ public class UserRepositoryImpl implements UserRepository{
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session.createQuery("from User where username = '" + username + "'", User.class).getSingleResult();
         }
+        catch (Exception e){
+            return null;
+        }
     }
 
     @Override
