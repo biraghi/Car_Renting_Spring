@@ -24,19 +24,24 @@
       <div class="form-group">
         <label for="firstname">Firstname</label>
         <form:input path="firstname" id="firstname" type="text" class="form-control" placeholder="Firstname"/>
+        <form:errors path="firstname" cssClass="text-danger"/>
       </div>
       <div class="form-group">
         <label for="lastname">Lastname</label>
         <form:input path="lastname" id="lastname" type="text" class="form-control" placeholder="Lastname"/>
+        <form:errors path="lastname" cssClass="text-danger"/>
       </div>
       <div class="form-group">
         <label for="birthdate">Birthdate</label>
         <form:input path="birthDate" id="birthdate" type="date" class="form-control"/>
+        <form:errors path="birthDate" cssClass="text-danger"/>
       </div>
       <div class="form-group">
         <label for="username">Username</label>
         <form:input path="username" id="username" type="text" class="form-control" placeholder="Username"/>
+        <form:errors path="username" cssClass="text-danger"/>
       </div>
+      <form:input path="password" id="password" type="hidden" class="form-control" placeholder="Password"/>
       <br>
       <div class="form-actions">
         <form:input path="id" id="id" type="hidden"/>

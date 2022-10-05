@@ -1,8 +1,8 @@
 package com.carrenting.spring.validation;
 
-import jakarta.validation.Constraint;
-import jakarta.validation.Payload;
 
+import javax.validation.Constraint;
+import javax.validation.Payload;
 import java.lang.annotation.*;
 
 import static java.lang.annotation.ElementType.ANNOTATION_TYPE;
@@ -14,7 +14,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target({ FIELD, ANNOTATION_TYPE })
 @Retention(RUNTIME)
 public @interface ValidPassword {
-    String message() default "Invalid Password";
+    String message() default "{ValidPassword.User.password.validation}";
 
     Class<?>[] groups() default {};
 

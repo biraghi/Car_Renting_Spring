@@ -2,9 +2,6 @@ package com.carrenting.spring.controller;
 
 import com.carrenting.spring.entity.User;
 import com.carrenting.spring.service.UserService;
-import jakarta.validation.Valid;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.security.Principal;
 import java.util.List;
 
@@ -46,22 +44,7 @@ public class UserController {
         return "userForm";
     }
 
-    @PostMapping (value = "update/{id}")
-    private String updateUser(@ModelAttribute("newUser") User newUser) throws Exception {
-        try{
-            User oldUser = userService.getUserFromId(newUser.getId());
-            oldUser.setFirstname(newUser.getFirstname());
-            oldUser.setLastname(newUser.getLastname());
-            oldUser.setBirthDate(newUser.getBirthDate());
-            oldUser.setUsername(newUser.getUsername());
-            userService.addUser(oldUser);
 
-            return "redirect:/user";
-        }
-        catch (Exception ex){
-            throw new Exception("Error");
-        }
-    }
 
     @GetMapping(value = "/add")
     private String getUserFormAdd(Model model)
@@ -73,13 +56,33 @@ public class UserController {
     }
 
     @PostMapping (value = "/add")
-    private String addUser(@ModelAttribute("newUser") @Validated User user, BindingResult bindingResult) throws Exception {
+    private String addUser(@Valid @ModelAttribute("newUser") User user, BindingResult bindingResult, Model model){
         if (bindingResult.hasErrors()){
+            model.addAttribute("type", "add");
             return "userForm";
         }
 
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         userService.addUser(user);
+        return "redirect:/user";
+
+
+    }
+
+    @PostMapping (value = "update/{id}")
+    private String updateUser(@Valid @ModelAttribute("newUser") User newUser, BindingResult bindingResult, Model model){
+        if (bindingResult.hasErrors()){
+            model.addAttribute("type", "update");
+            return "userForm";
+        }
+
+        User oldUser = userService.getUserFromId(newUser.getId());
+        oldUser.setFirstname(newUser.getFirstname());
+        oldUser.setLastname(newUser.getLastname());
+        oldUser.setBirthDate(newUser.getBirthDate());
+        oldUser.setUsername(newUser.getUsername());
+        userService.addUser(oldUser);
+
         return "redirect:/user";
 
 

@@ -1,13 +1,15 @@
 package com.carrenting.spring.validation;
 
-import jakarta.validation.ConstraintValidator;
-import jakarta.validation.ConstraintValidatorContext;
+
 import org.passay.*;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.passay.PasswordValidator;
+
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
 
 
 public class PasswordValidatorCustom implements ConstraintValidator<ValidPassword, String> {
@@ -20,7 +22,7 @@ public class PasswordValidatorCustom implements ConstraintValidator<ValidPasswor
     public boolean isValid(String password, ConstraintValidatorContext context) {
         PasswordValidator validator = new PasswordValidator(Arrays.asList(
                 // at least 8 characters
-                new LengthRule(8, 30),
+                new LengthRule(8, 200),
 
                 // at least one upper-case character
                 new CharacterRule(EnglishCharacterData.UpperCase, 1),
@@ -42,12 +44,6 @@ public class PasswordValidatorCustom implements ConstraintValidator<ValidPasswor
         if (result.isValid()) {
             return true;
         }
-        List<String> messages = validator.getMessages(result);
-        String messageTemplate = messages.stream()
-                .collect(Collectors.joining(","));
-        context.buildConstraintViolationWithTemplate(messageTemplate)
-                .addConstraintViolation()
-                .disableDefaultConstraintViolation();
         return false;
     }
 }
